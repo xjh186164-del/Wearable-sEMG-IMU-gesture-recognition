@@ -1,0 +1,9 @@
+gesture_id,filename,prepare_start_s,start_start_s,hold_start_s,end_start_s,duration_s,fps,width,height
+REST,REST.mp4,0,1,2.5,6.5,8.5,30,1280,720
+WRIST_UP,WRIST_UP.mp4,0,1,2.5,6.5,8.5,30,1280,720
+WRIST_DOWN,WRIST_DOWN.mp4,0,1,2.5,6.5,8.5,30,1280,720
+FOREARM_IN,FOREARM_IN.mp4,0,1,2.5,6.5,8.5,30,1280,720
+FOREARM_OUT,FOREARM_OUT.mp4,0,1,2.5,6.5,8.5,30,1280,720
+ARM_UP,ARM_UP.mp4,0,1,2.5,6.5,8.5,30,1280,720
+ARM_DOWN,ARM_DOWN.mp4,0,1,2.5,6.5,8.5,30,1280,720
+FIST,FIST.mp4,0,1,2.5,6.5,8.5,30,1280,720

@@ -1,0 +1,317 @@
+{
+  "best_epoch": 8,
+  "best_validation_macro_f1": 1.0,
+  "learned_emg_weights": {
+    "ARM_DOWN": 0.18971025943756104,
+    "ARM_UP": 0.17868442833423615,
+    "FIST": 0.8152748942375183,
+    "FOREARM_IN": 0.29393187165260315,
+    "FOREARM_OUT": 0.2752220034599304,
+    "REST": 0.5196486711502075,
+    "WRIST_DOWN": 0.721860408782959,
+    "WRIST_UP": 0.7288545370101929
+  },
+  "learned_imu_weights": {
+    "ARM_DOWN": 0.810289740562439,
+    "ARM_UP": 0.8213155716657639,
+    "FIST": 0.1847251057624817,
+    "FOREARM_IN": 0.7060681283473969,
+    "FOREARM_OUT": 0.7247779965400696,
+    "REST": 0.4803513288497925,
+    "WRIST_DOWN": 0.278139591217041,
+    "WRIST_UP": 0.27114546298980713
+  },
+  "schema_version": "personalized_dual_cnn_metrics_v1",
+  "test": {
+    "accuracy": 0.9967532467532467,
+    "balanced_accuracy": 0.9955357142857143,
+    "confusion_matrix": [
+      [
+        896,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        220,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        224,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        224,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        224,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        224,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        224,
+        0
+      ],
+      [
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        220
+      ]
+    ],
+    "loss": 0.07985459191591612,
+    "macro_f1": 0.9963633345802054,
+    "per_class": [
+      {
+        "f1": 0.9977728285077951,
+        "label": "REST",
+        "precision": 0.9955555555555555,
+        "recall": 1.0,
+        "support": 896
+      },
+      {
+        "f1": 0.9821428571428571,
+        "label": "WRIST_UP",
+        "precision": 0.9821428571428571,
+        "recall": 0.9821428571428571,
+        "support": 224
+      },
+      {
+        "f1": 1.0,
+        "label": "WRIST_DOWN",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 224
+      },
+      {
+        "f1": 1.0,
+        "label": "FOREARM_IN",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 224
+      },
+      {
+        "f1": 1.0,
+        "label": "FOREARM_OUT",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 224
+      },
+      {
+        "f1": 1.0,
+        "label": "ARM_UP",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 224
+      },
+      {
+        "f1": 1.0,
+        "label": "ARM_DOWN",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 224
+      },
+      {
+        "f1": 0.9909909909909909,
+        "label": "FIST",
+        "precision": 1.0,
+        "recall": 0.9821428571428571,
+        "support": 224
+      }
+    ]
+  },
+  "validation": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "confusion_matrix": [
+      [
+        672,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        168,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        168,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        168,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        168,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        168,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        168,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        168
+      ]
+    ],
+    "loss": 0.048607398114808194,
+    "macro_f1": 1.0,
+    "per_class": [
+      {
+        "f1": 1.0,
+        "label": "REST",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 672
+      },
+      {
+        "f1": 1.0,
+        "label": "WRIST_UP",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 168
+      },
+      {
+        "f1": 1.0,
+        "label": "WRIST_DOWN",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 168
+      },
+      {
+        "f1": 1.0,
+        "label": "FOREARM_IN",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 168
+      },
+      {
+        "f1": 1.0,
+        "label": "FOREARM_OUT",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 168
+      },
+      {
+        "f1": 1.0,
+        "label": "ARM_UP",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 168
+      },
+      {
+        "f1": 1.0,
+        "label": "ARM_DOWN",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 168
+      },
+      {
+        "f1": 1.0,
+        "label": "FIST",
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 168
+      }
+    ]
+  }
+}

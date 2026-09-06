@@ -1,0 +1,46 @@
+function [filteredMillivolts, state] = ads1298_emg_filter_step(inputMillivolts, state)
+%ADS1298_EMG_FILTER_STEP Filter one batch while retaining channel states.
+
+if ~isstruct(state) || ~isfield(state, "channelCount")
+    error("ads1298_emg_filter_step:InvalidState", ...
+        "state must come from ads1298_emg_filter_create.");
+end
+if ~isnumeric(inputMillivolts) || ~isreal(inputMillivolts) || ...
+        ~ismatrix(inputMillivolts) || ...
+        size(inputMillivolts, 2) ~= state.channelCount || ...
+        any(~isfinite(inputMillivolts), "all")
+    error("ads1298_emg_filter_step:InvalidInput", ...
+        "inputMillivolts must be a finite real matrix with %d columns.", ...
+        state.channelCount);
+end
+
+inputMillivolts = double(inputMillivolts);
+if isempty(inputMillivolts)
+    filteredMillivolts = zeros(0, state.channelCount);
+    return;
+end
+
+if ~state.initialized
+    highpassOrder = size(state.highpassZi, 1);
+    previousOutputs = zeros(1, highpassOrder);
+    for channel = 1:state.channelCount
+        previousInputs = repmat(inputMillivolts(1, channel), 1, highpassOrder);
+        initialConditions = filtic(state.highpassB, state.highpassA, ...
+            previousOutputs, previousInputs);
+        state.highpassZi(:, channel) = initialConditions(:);
+    end
+    state.initialized = true;
+end
+
+[highpassed, state.highpassZi] = filter( ...
+    state.highpassB, state.highpassA, inputMillivolts, state.highpassZi, 1);
+[mainsRejected, state.mainsBandstopZi] = filter( ...
+    state.mainsBandstopB, state.mainsBandstopA, highpassed, ...
+    state.mainsBandstopZi, 1);
+[harmonicRejected, state.harmonicNotchZi] = filter( ...
+    state.harmonicNotchB, state.harmonicNotchA, mainsRejected, ...
+    state.harmonicNotchZi, 1);
+[filteredMillivolts, state.lowpassZi] = filter( ...
+    state.lowpassB, state.lowpassA, harmonicRejected, ...
+    state.lowpassZi, 1);
+end

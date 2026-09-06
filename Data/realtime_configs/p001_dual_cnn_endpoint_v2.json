@@ -1,0 +1,194 @@
+{
+  "checkpoint_sha256": "f6a0912b249352079af665f806452fa82a669216b03e97bec620794a9511231c",
+  "generation_seed": 20260822,
+  "schema_version": "realtime_decision_calibration_v2",
+  "search_grid": {
+    "consecutive_updates": [
+      2,
+      3,
+      4
+    ],
+    "ema_new_weights": [
+      0.4,
+      0.6,
+      0.8
+    ],
+    "minimum_confidences": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ]
+  },
+  "selected": {
+    "consecutive_updates": 2,
+    "ema_new_weight": 0.4,
+    "minimum_confidence": 0.5
+  },
+  "validation_evidence": {
+    "compatible_transition_window_count": 1130,
+    "correct_onset_count": 42,
+    "correct_onset_latencies_s": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.1,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "expected_target_onset_count": 42,
+    "median_correct_onset_latency_s": 0.0,
+    "movement_compatible_transition_window_count": 461,
+    "movement_transition_window_count": 461,
+    "movement_unrelated_transition_window_count": 0,
+    "p95_correct_onset_latency_s": 0.0,
+    "return_compatible_transition_window_count": 669,
+    "return_transition_window_count": 669,
+    "return_unrelated_transition_window_count": 0,
+    "stable_confusion_matrix": [
+      [
+        669,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        167,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        166,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        167,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        166,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        168,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        168,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        167
+      ]
+    ],
+    "stable_macro_f1": 0.9996246246246246,
+    "stable_missed_count": 1,
+    "stable_true_support": [
+      669,
+      167,
+      166,
+      167,
+      167,
+      168,
+      168,
+      167
+    ],
+    "stable_window_count": 1839,
+    "transition_endpoint_compatibility": 1.0,
+    "transition_window_count": 1130,
+    "unrelated_transition_window_count": 0
+  },
+  "validation_session_ids": [
+    "S003_D06_R01",
+    "S003_D06_R02",
+    "S003_D07_R01"
+  ]
+}

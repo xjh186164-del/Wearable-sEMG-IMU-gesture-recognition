@@ -1,0 +1,110 @@
+{
+  "subject_id": "S003",
+  "session_id": "S003_D02_R02",
+  "arm_side": "left",
+  "operator_code": "OperatorCode01",
+  "sleeve_size": "CUSTOM_V1",
+  "device_identifier": "SensorBiShe-EMG",
+  "protocol_version": "eight_pose_v5",
+  "protocol_seed": 3.622919751E+9,
+  "block_count": 2,
+  "trial_table": [
+    {
+      "trial_id": 1,
+      "block_id": 1,
+      "gesture_id": "WRIST_DOWN",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 2,
+      "block_id": 1,
+      "gesture_id": "ARM_DOWN",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 3,
+      "block_id": 1,
+      "gesture_id": "FOREARM_IN",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 4,
+      "block_id": 1,
+      "gesture_id": "ARM_UP",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 5,
+      "block_id": 1,
+      "gesture_id": "WRIST_UP",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 6,
+      "block_id": 1,
+      "gesture_id": "FIST",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 7,
+      "block_id": 1,
+      "gesture_id": "FOREARM_OUT",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 8,
+      "block_id": 2,
+      "gesture_id": "WRIST_DOWN",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 9,
+      "block_id": 2,
+      "gesture_id": "FOREARM_OUT",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 10,
+      "block_id": 2,
+      "gesture_id": "ARM_UP",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 11,
+      "block_id": 2,
+      "gesture_id": "ARM_DOWN",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 12,
+      "block_id": 2,
+      "gesture_id": "FIST",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 13,
+      "block_id": 2,
+      "gesture_id": "WRIST_UP",
+      "is_repeat": false
+    },
+    {
+      "trial_id": 14,
+      "block_id": 2,
+      "gesture_id": "FOREARM_IN",
+      "is_repeat": false
+    }
+  ],
+  "created_at_utc": "2026-08-20T22:14:09.228Z",
+  "emg_rate_hz": 500,
+  "imu_rate_hz": 104,
+  "ads1298_gain": 6,
+  "accelerometer_range_g": 4,
+  "gyroscope_range_dps": 500,
+  "electrode_layout_version": "layout_v1",
+  "pcb_orientation_version": "orientation_v1",
+  "acquisition_software_version": "guided_acquisition_v1",
+  "matlab_version": "25.2.0.3123386 (R2025b) Update 3",
+  "completed": true,
+  "stopped_by_operator": false,
+  "terminal_status": "completed"
+}

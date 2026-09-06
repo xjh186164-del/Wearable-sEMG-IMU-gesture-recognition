@@ -1,0 +1,240 @@
+{
+  "accepted_sessions": {
+    "S001_D01_R02": 616,
+    "S001_D02_R02": 616,
+    "S002_D01_R01": 616,
+    "S002_D02_R01": 616,
+    "S003_D01_R01": 616,
+    "S003_D01_R02": 616,
+    "S003_D02_R01": 616,
+    "S003_D02_R02": 616,
+    "S003_D03_R01": 616,
+    "S003_D03_R02": 616,
+    "S003_D04_R01": 616,
+    "S003_D04_R02": 616,
+    "S003_D05_R01": 616,
+    "S003_D05_R02": 616,
+    "S003_D06_R01": 616,
+    "S003_D06_R02": 616,
+    "S003_D07_R01": 616,
+    "S003_D08_R01": 616,
+    "S003_D08_R02": 616,
+    "S003_D09_R01": 616,
+    "S003_D09_R02": 616
+  },
+  "class_counts": {
+    "ARM_DOWN": 1176,
+    "ARM_UP": 1176,
+    "FIST": 1176,
+    "FOREARM_IN": 1176,
+    "FOREARM_OUT": 1176,
+    "REST": 4704,
+    "WRIST_DOWN": 1176,
+    "WRIST_UP": 1176
+  },
+  "class_labels": [
+    "REST",
+    "WRIST_UP",
+    "WRIST_DOWN",
+    "FOREARM_IN",
+    "FOREARM_OUT",
+    "ARM_UP",
+    "ARM_DOWN",
+    "FIST"
+  ],
+  "emg_shape_per_window": [
+    8,
+    250
+  ],
+  "guard_seconds": 0.4,
+  "imu_shape_per_window": [
+    6,
+    52
+  ],
+  "protocol_version": "eight_pose_v5",
+  "rejected_sessions": [
+    {
+      "reason": "quality gate did not pass cleanly",
+      "session_id": "S003_D07_R02"
+    }
+  ],
+  "schema_version": "gesture_window_dataset_v1",
+  "source_sha256": {
+    "S001_D01_R02": {
+      "S001_D01_R02_events.csv": "df0f04e680fdee8e7e7d5f55808c306b1eecc0811bb52c44d5b45f5084e787fa",
+      "S001_D01_R02_filtered.csv": "8d189b54ab682e462f675a4076caec1f90ae675b8fef8e5a8ad8ad2b0dbb2c0f",
+      "S001_D01_R02_imu.csv": "d5f37d1912e7b9bed60078f97ec503c3cdcfc44c07f222dcb410438ceb7a3d38",
+      "S001_D01_R02_metadata.json": "8f841c3df1c22b151a62deb0e7592a270b58620f861d43b44ec7d4deaf361620",
+      "S001_D01_R02_quality.json": "7b80b3661d70316eb2448f13f95a1d36a76481f8f5aa3545fba408be4afeb58d",
+      "S001_D01_R02_raw.csv": "928cc5a82cc9a34a16cbd1f7ad09897fd132ee91d3614f445c3a80dd7e037481"
+    },
+    "S001_D02_R02": {
+      "S001_D02_R02_events.csv": "33cdf997b150430b749345ef753388b6cfc48907b9ca90e80fbad9a992228ddb",
+      "S001_D02_R02_filtered.csv": "0e96824e214227510fe30e76806588422271520c3e5ca228f9558ec55189b7b2",
+      "S001_D02_R02_imu.csv": "6173d2393f6f66a1979f10467d3ee4a36ed3d99c249134bbad3e1eb18dfdf3a7",
+      "S001_D02_R02_metadata.json": "353e824f23db7306bdf085bd1f11a643f8f3dfc4eb94516731d2bb9b1698bb5f",
+      "S001_D02_R02_quality.json": "b5b52d1179bc0c453a8999dec337b73f644d7258288dd4827c1615e847d7ba56",
+      "S001_D02_R02_raw.csv": "c7370221bced6875ea69fc618939cbcec56d1a92d5c43a739d8f54062d9efe13"
+    },
+    "S002_D01_R01": {
+      "S002_D01_R01_events.csv": "836daf0ff2789bb76df80dd3e6f3277944dd8be77458f9ff56f63cd9c32b2a60",
+      "S002_D01_R01_filtered.csv": "33cfde9076f0c8c733a705e87a5cf397ed49eba9628e856fbf8f52b24bb76be9",
+      "S002_D01_R01_imu.csv": "dde91a8a31158ad7a41318ca3ee7cef9542d8276f06661faa17c2f7713d543a6",
+      "S002_D01_R01_metadata.json": "51dcbb6cbf57c34f23083a56850e9761e087b45ee4c796f6a72d6a787da377a5",
+      "S002_D01_R01_quality.json": "00ff16f18080bb29be66bca345c89c349fc68efd3d5e7148224677b5c0881544",
+      "S002_D01_R01_raw.csv": "3fc9f2fc004720459772ec4552ada576bda54dd3feb722b0e08fd179641da4f9"
+    },
+    "S002_D02_R01": {
+      "S002_D02_R01_events.csv": "1fae0fb2bc718e80ec6c9151f6907dab95ee7e10d3040b8ba54c9a5975f9a6fc",
+      "S002_D02_R01_filtered.csv": "891c4265d5465e0af93bbf68d371d307faabdc7f3b55f8031df5278c2a835c96",
+      "S002_D02_R01_imu.csv": "f628259f38e98b876093f99823da6501d8f37fa5d68a20b1656f1c2f56c2388f",
+      "S002_D02_R01_metadata.json": "b5ed01e5bac6caeeac978ed21f2cdaf7478172881929afb2a7b03f7d036f6a48",
+      "S002_D02_R01_quality.json": "9e07147dfb9d8a049f533618abc111ee9df8a48cc643ec32f452d3e8861881cf",
+      "S002_D02_R01_raw.csv": "a3afadfe13cd64f8b92087ef0bf0ae602bd7e23cd732351c03596064f41d1bca"
+    },
+    "S003_D01_R01": {
+      "S003_D01_R01_events.csv": "4361ca77a34c6e5618936f4c198ec6ab95cc6e366ea222eac95b7bd2213967df",
+      "S003_D01_R01_filtered.csv": "e28ded273a40c1dc9648bfef427c699ad8c2cb64100a46afa07c841cb81c2565",
+      "S003_D01_R01_imu.csv": "f3bf7fdc0007594c56d4c74bc5b669c93ffc30c79de41b7166342af8642b9898",
+      "S003_D01_R01_metadata.json": "a30f55e2f0ee3f898742280bcd83ad7ef752250f388901fc1538300aa7acb9c2",
+      "S003_D01_R01_quality.json": "0b0296826858e8e4e6464a07773f14215ac4a58618c6a6038fcb90fb995a0f44",
+      "S003_D01_R01_raw.csv": "03f38740b256d83d66c76b033ecd78b64996cd1445486a10814e8b41afa05783"
+    },
+    "S003_D01_R02": {
+      "S003_D01_R02_events.csv": "6c86fc7a5daba95b00399104942a84ad9a56e118f9532bf232fb0dcc4ab0e441",
+      "S003_D01_R02_filtered.csv": "0defc2e747a74a490739706f0d067501a225a5b1d59d78fb77dc03c1ebb9e54e",
+      "S003_D01_R02_imu.csv": "681cf1a59c847f40c08f9d4ba1de021de485ea232ec3fe9ef5c2529656bbb603",
+      "S003_D01_R02_metadata.json": "4f10b664ca778d622dd31f00017ff9f5854a0760ffccd3ed5443bb3c8fbca383",
+      "S003_D01_R02_quality.json": "a69eee8a0941f59ba1662cb44eb5080ea63c05eba4149c68aa6d077b782cfc25",
+      "S003_D01_R02_raw.csv": "d98f148c15242b8ef26d7e1af7281a16f2162d09c052030fd242c6d008f45bb3"
+    },
+    "S003_D02_R01": {
+      "S003_D02_R01_events.csv": "4dbae0ebfbdb6b0329b0fd3b8bd35322b2405be03ea27a86b2e24ff0bff31eb2",
+      "S003_D02_R01_filtered.csv": "d8b595cbdf27df61179c06bc7b4a3e1b3c1d40788ba179369f1f88bfd6b6db4d",
+      "S003_D02_R01_imu.csv": "1bb82d7f9fda2e5b511563e7bf2f839b8c0cdf7f18807195bf24fb848a9b3c12",
+      "S003_D02_R01_metadata.json": "9a58e6533b13826d78100c820d22a468fd4f62730684c351b047f8004c41f49f",
+      "S003_D02_R01_quality.json": "fc2886826c31475e587613ee7efb6bd5857549ad0c1b65e434680388a734f39b",
+      "S003_D02_R01_raw.csv": "f57d0ca9e3fdc7d1d74f527cafb2550853ec1df85e4c87597c3d5d6a86cc4170"
+    },
+    "S003_D02_R02": {
+      "S003_D02_R02_events.csv": "872d032cf46b5501e681d92830a66e24e2548e26318d1881e5273941380f56b0",
+      "S003_D02_R02_filtered.csv": "dbe65c7c08cf811e52b45a58a227f212c7498fd8cc228754d38df445d7b62fb9",
+      "S003_D02_R02_imu.csv": "43569a6ab62e89f08702d45db890dc8a87eb5de51e7784e6879bf774bdff6f3f",
+      "S003_D02_R02_metadata.json": "5f909336c677d4048e2cd43ea915a1b0933b78987e48ddb0d817a30afc277b40",
+      "S003_D02_R02_quality.json": "cc8428eee03b66bbc1e89c790820498554983721aaaf9fe867738cab9373f482",
+      "S003_D02_R02_raw.csv": "85338b68c5aad8a29dd23355e978a11d7a319a1e6509afb73055fecfd70cd5bc"
+    },
+    "S003_D03_R01": {
+      "S003_D03_R01_events.csv": "1751bc14e5e722973b3d2a7a66e0b688530d38c876ac1137e3faf68e658bbeb5",
+      "S003_D03_R01_filtered.csv": "094e15e5b1e5c453347b0e0ead947d59bad76af249e46d2e2ec125df5a256fa3",
+      "S003_D03_R01_imu.csv": "cea16d7f82abb8932479baab42c352b10cb978be734d844baf13cf132dc76d31",
+      "S003_D03_R01_metadata.json": "946b078876e1fd3e447b6ff7914e3e9d353c9ad7a4e44bd9bd2534529a3932eb",
+      "S003_D03_R01_quality.json": "0ce1a21f62c957882abcdac32b716c729051a8369c38d3b17dd7e240740822d6",
+      "S003_D03_R01_raw.csv": "21a0382dca97866897d2f0b0c8dd8db47c84c73734136a6e4328d9138a89b09d"
+    },
+    "S003_D03_R02": {
+      "S003_D03_R02_events.csv": "0edfe4d9ab5ee4cad1731932587e358183e846d65a65a0a9604b581a98541a62",
+      "S003_D03_R02_filtered.csv": "68a5e67c187ecd2df79bdc6910cae538f9b43ea3284b69bb48f527a622181f21",
+      "S003_D03_R02_imu.csv": "dfe7af474578ca5cefd447ec9c58dfce01d5598923d4883ab78135ae8ad00119",
+      "S003_D03_R02_metadata.json": "e1a70d0086a3574deddb777df84a5cc48c320c0c1ad6248b4cf9ba3a28eb96d8",
+      "S003_D03_R02_quality.json": "e526c8c7c59bb918db940e7dcba9b1bece7029cea634d2e25ce756f559d049ea",
+      "S003_D03_R02_raw.csv": "8ad04f882a87bfa309ddee1a124c64e28c368ba5f7ca384212b58a01a9ff5e79"
+    },
+    "S003_D04_R01": {
+      "S003_D04_R01_events.csv": "12984e49cc10196810806ae5ee2264541dd9edd0a03482728ed49a49b8ecda2a",
+      "S003_D04_R01_filtered.csv": "7d514619aca2f36d46f364aad53887be9077ab41f77307ebe7bfc18619d7bc1e",
+      "S003_D04_R01_imu.csv": "4aa22608395c412dcc380224d71e4e19329f58a5e9c64583581782240575c04f",
+      "S003_D04_R01_metadata.json": "63a52819714dd2fbae8490b86843032bfecbbf7ed9224f13c231bd399d13e392",
+      "S003_D04_R01_quality.json": "e1afc9c74cb9c3891a630e9ecd3412679c6403f94afab40b1e20380ffb672fb0",
+      "S003_D04_R01_raw.csv": "685eed4c7cb3ce57a013f97b6bae8f55f239ba9065768133e9ebde2bd85e9fc2"
+    },
+    "S003_D04_R02": {
+      "S003_D04_R02_events.csv": "0f262a5a968abd74d35b798b86e807a49be2ae8e80e965d32a66c54c3edfd797",
+      "S003_D04_R02_filtered.csv": "f5a48ececebfd6b9e675a52a1fd2ba77a7c238328a9070c67371ee31ed7501dc",
+      "S003_D04_R02_imu.csv": "c378991fe464aa4b4a0b8676c19dda6f29b6c8229f2b24c2fe59539e677f8c13",
+      "S003_D04_R02_metadata.json": "afb0c45ba2d9447413885554d193ae3073d5647cfd26b5d843c9e32a5329e3d2",
+      "S003_D04_R02_quality.json": "fb195c1d1ffaf6170ac6da6903860c24bd0a6a6a6c8e1462b462d032cb9862be",
+      "S003_D04_R02_raw.csv": "4df20fa9bee30f678c4ca4d4843146e21f5120aac9241238e096409ca28e1c35"
+    },
+    "S003_D05_R01": {
+      "S003_D05_R01_events.csv": "352f6e2f33d74110bf5863722e72c0cfd418be14a362fd3b59283ff08025bdb5",
+      "S003_D05_R01_filtered.csv": "31c28f78f77e6cb3b30dbd041358ba8bf0417614b5c3856c99bb84d071d70676",
+      "S003_D05_R01_imu.csv": "71bf0159b10a92611dbc59423d5c7971e5f1a79b2fbb66296ef95fd9717b7354",
+      "S003_D05_R01_metadata.json": "70a158ac7b3eb4bafa89bf2f3fba4d81a3c49f4a79ff0d0a097b3d0a2428a98c",
+      "S003_D05_R01_quality.json": "05ecddf439d30ebb1659f9076408ff6c8162fb0864b08345db67d7c74a53effd",
+      "S003_D05_R01_raw.csv": "a8bdeea8558534099e95a4afd443db93bda44cf563552c9672919adabff9cf08"
+    },
+    "S003_D05_R02": {
+      "S003_D05_R02_events.csv": "48d917956631e0b59c1292b2cd9210f7ac4cbd3b6d4745a646ffe86bca7eab9d",
+      "S003_D05_R02_filtered.csv": "eb8aa7a19f8468a8d5e8eeecefd617886e9bd3d4c26b4308e1c1839723e2f347",
+      "S003_D05_R02_imu.csv": "fdebd7fc95f298a015089468332592f4831298997696edf6562da05ee4ffa842",
+      "S003_D05_R02_metadata.json": "28b8088e211e86586780bf2591f29c5c9da074ead9cd47d7c7ecc343cea46ba6",
+      "S003_D05_R02_quality.json": "a7176aaabcc6d858dd01a98782005fa2bd2406232705961f8539ffad9cdc19d0",
+      "S003_D05_R02_raw.csv": "90140c72b5aec7e278105e33f9caf443de0710fd3a7102ffc68e5e0f11434567"
+    },
+    "S003_D06_R01": {
+      "S003_D06_R01_events.csv": "3753876fb691d4140629f511345c7228a98c0280c08c0abe237f81a5de2308f4",
+      "S003_D06_R01_filtered.csv": "1a89ac3e2e794d66f76851420646e6b2d773e1c24dc1368ecc380e20c23351b9",
+      "S003_D06_R01_imu.csv": "3d85fd01859e397c19f5164ef94a52d12549bd4fe44a35738bfd9bda1a19851e",
+      "S003_D06_R01_metadata.json": "c254e85a8a20897375afedaece73ed3979cb92f6ba17f731fe87b2d3d933ffed",
+      "S003_D06_R01_quality.json": "ae931f5da8a3efa6708da690fc5790ec900225b34fc18c02560a27239fa022d8",
+      "S003_D06_R01_raw.csv": "2e26167815fd5ee422a76d87b48f674650c0ea5491e477cddbd22454fb2df4e5"
+    },
+    "S003_D06_R02": {
+      "S003_D06_R02_events.csv": "17caa280de271c6109cf4e22dec2249839612e59786b13c9da85ef60d879d34b",
+      "S003_D06_R02_filtered.csv": "36aca0cefef11e216e9ee65c7c7d80a5b40050408a320b0e6780832cf9c6b9d0",
+      "S003_D06_R02_imu.csv": "4a597a2eaf0d5ed1b4d17385a917728cf27a4bc658178f0feb14e47e03acd65b",
+      "S003_D06_R02_metadata.json": "746381d2bfaa3275e71e4c9e0370d7f520112b4ffb64b346b726e71d54f13701",
+      "S003_D06_R02_quality.json": "d468a6a72a02220d6936db86590b08d64699139c8b6354dd4c2475181977fbff",
+      "S003_D06_R02_raw.csv": "6d8b5af8ae893c9d259b5e4056d44fef3d5d143116d92f4f7d4adb8c4b5b45b3"
+    },
+    "S003_D07_R01": {
+      "S003_D07_R01_events.csv": "6b97d51ad347eaea31b081eb0f214a79a040beb260a0859d29d9f2ea7421b47f",
+      "S003_D07_R01_filtered.csv": "bf4095dbb1be8e130dd4665953c08e03c9af7f4f3bf5e1a38cd5dfe0202b2c80",
+      "S003_D07_R01_imu.csv": "6857d4d3e23541ca52b9da187bcbee536fe2b13b1baec8032d15f3fd3486f400",
+      "S003_D07_R01_metadata.json": "7f5ba7187bb2391d6dd5b4bf8cc33c3b3f189af02648c7db4d54b8713b10a18e",
+      "S003_D07_R01_quality.json": "bd87e9f840c4c420bca6b166b722f479897d9ff175a9b9341f5175738b6558a7",
+      "S003_D07_R01_raw.csv": "cceae800f5e3a0531bf7ce4b8d3adabefde570582ef4c5d4b9c36cca19ea212a"
+    },
+    "S003_D08_R01": {
+      "S003_D08_R01_events.csv": "00b69405f4fde7b5d4e94bae7917eaa63d3c03a89ae42196a47d5f5ef106c0af",
+      "S003_D08_R01_filtered.csv": "27c9e167ac628d221d4ca06798be231f2b8574efa4deabd20b2b92d2cb172aa1",
+      "S003_D08_R01_imu.csv": "7d581d7dc63a3ffe48ead7338a3a6ff95a3f999b01f1dee833c0a587b83d7557",
+      "S003_D08_R01_metadata.json": "fe4ef5bf94ef265214c9a6e2a83b206fd13a5e26ecf8f79dfac1e79376d3e76f",
+      "S003_D08_R01_quality.json": "c501054ca39e7f42e124ee6167c302c23459bb775c0bb81d1bfeec4f8debadc2",
+      "S003_D08_R01_raw.csv": "d830dda990c0dd79f22a41c24816518fba161b910cba2f92eba901209ab1be23"
+    },
+    "S003_D08_R02": {
+      "S003_D08_R02_events.csv": "4729d0222a107ec10742b8e6709b1be115ca309b3acaebc87f10c5b159ca1c55",
+      "S003_D08_R02_filtered.csv": "819fecde116f8bec5e052d43a4b6e78b41f49da4be077d4520bc34020c30225c",
+      "S003_D08_R02_imu.csv": "e078f6e8d11b773a14b809af4bddbe0400140ab0c328725c269a7017caf87440",
+      "S003_D08_R02_metadata.json": "4e164bff0ba87277714f19c13d17b75cdd94c45255b35349b0a732d43ccb38d7",
+      "S003_D08_R02_quality.json": "02674e067f789418247c6e5d40e005ce8357bb106da737271cb16c0f482e9ed6",
+      "S003_D08_R02_raw.csv": "8723ee7dd85b5a8f68ea89d94681ae7337f9e450fe93bb2542efe0f85fc1a87b"
+    },
+    "S003_D09_R01": {
+      "S003_D09_R01_events.csv": "7b3b9a54e21396fd9ae3b51482adc8a275abba6ba0c6f54328096bf94b97c6f1",
+      "S003_D09_R01_filtered.csv": "6d556037f025c7f72df5c679f5b6fb576eac885dee6f5db72d58a8a9941df66b",
+      "S003_D09_R01_imu.csv": "028caf56e9646520f4b34b9448fa3df9108f979e9e0e21b86acfe5e1ae61d961",
+      "S003_D09_R01_metadata.json": "d181084dea032fec9856bb4cfbb22a64aa351f76b8791e65e891a51d0df367ba",
+      "S003_D09_R01_quality.json": "c7bfcb83eee5638e91cc76deb85485019d4b589b904135f52f41660eaf0bbe71",
+      "S003_D09_R01_raw.csv": "76b39c8791321b235e5225289800cb70ac239fe4bc20ebe7237f7237146f8cc1"
+    },
+    "S003_D09_R02": {
+      "S003_D09_R02_events.csv": "159e35e1c2dd85d3d2f4046313baa76ef0e33fa478528068cc7d92743f2fc531",
+      "S003_D09_R02_filtered.csv": "1a603654348f9a133475c7c2d50de9fe633aaace3b27e836571ec0146f9f4dad",
+      "S003_D09_R02_imu.csv": "c77112b816f76d7fa76511867f65f3fff6a493501b2570d34aa164df3659a169",
+      "S003_D09_R02_metadata.json": "719a76b1d47c8ce136625e7d76960857bc6f5a7ad5b94e40626952f7880596d1",
+      "S003_D09_R02_quality.json": "cc1bbc337df21b4e136883f5a8c4f36c0e8bbd001fedca0f520092958618972a",
+      "S003_D09_R02_raw.csv": "feec4707c033145043d8ebcdd785df6a7ae55b61ed82921aa2245e6742936cdb"
+    }
+  },
+  "step_seconds": 0.1,
+  "subject_aliases": {
+    "S001": "P001",
+    "S002": "P001",
+    "S003": "P001"
+  },
+  "window_count": 12936,
+  "window_seconds": 0.5
+}

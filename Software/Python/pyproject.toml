@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gesture-ml"
+version = "0.1.0"
+description = "Timestamp-aligned sEMG and IMU dataset preparation"
+requires-python = ">=3.12,<3.13"
+dependencies = ["numpy==2.2.6"]
+
+[project.scripts]
+gesture-build-dataset = "gesture_ml.build_dataset:main"
+gesture-train = "gesture_ml.train:main"
+gesture-realtime-worker = "gesture_ml.realtime_worker:main"
+gesture-calibrate-realtime = "gesture_ml.calibrate_realtime:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gesture_ml*"]

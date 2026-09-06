@@ -1,0 +1,6 @@
+function geometry = recognition_status_layout()
+%RECOGNITION_STATUS_LAYOUT Normalized EMG/status rectangles.
+geometry = struct( ...
+    "emg_layout_outer_position", [0, 0.08, 1, 0.92], ...
+    "status_textbox_position", [0.1, 0.01, 0.8, 0.04]);
+end

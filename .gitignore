@@ -1,0 +1,58 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE settings
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python environments, packages and caches
+.venv/
+.venv-*/
+**/.venv/
+**/.venv-*/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+
+# MATLAB generated files
+*.asv
+*.m~
+slprj/
+codegen/
+*.autosave
+
+# Arduino and embedded build products
+**/build/
+.pio/
+*.elf
+*.bin
+*.hex
+*.map
+
+# Temporary and local working directories
+tmp/
+temp/
+*.tmp
+*.bak
+*.log
+
+# Data deliberately excluded from the release
+quarantine/
+excluded/
