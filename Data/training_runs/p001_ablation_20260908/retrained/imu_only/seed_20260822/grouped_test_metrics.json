@@ -1,0 +1,1199 @@
+{
+  "per_session": {
+    "S003_D08_R01": {
+      "accuracy": 0.9837662337662337,
+      "balanced_accuracy": 0.9810267857142858,
+      "confusion_matrix": [
+        [
+          222,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          56,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          52,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          56,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          56,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          56,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          56,
+          0
+        ],
+        [
+          0,
+          1,
+          3,
+          0,
+          0,
+          0,
+          0,
+          52
+        ]
+      ],
+      "macro_f1": 0.9817284410493765,
+      "per_class": [
+        {
+          "f1": 0.9888641425389756,
+          "label": "REST",
+          "precision": 0.9866666666666667,
+          "recall": 0.9910714285714286,
+          "support": 224
+        },
+        {
+          "f1": 0.9739130434782608,
+          "label": "WRIST_UP",
+          "precision": 0.9491525423728814,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 0.9369369369369368,
+          "label": "WRIST_DOWN",
+          "precision": 0.9454545454545454,
+          "recall": 0.9285714285714286,
+          "support": 56
+        },
+        {
+          "f1": 0.9911504424778761,
+          "label": "FOREARM_IN",
+          "precision": 0.9824561403508771,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "FOREARM_OUT",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "ARM_UP",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "ARM_DOWN",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 0.962962962962963,
+          "label": "FIST",
+          "precision": 1.0,
+          "recall": 0.9285714285714286,
+          "support": 56
+        }
+      ],
+      "window_count": 616
+    },
+    "S003_D08_R02": {
+      "accuracy": 0.9334415584415584,
+      "balanced_accuracy": 0.9135044642857143,
+      "confusion_matrix": [
+        [
+          221,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          51,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          10,
+          33,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          56,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          56,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          56,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          56,
+          0
+        ],
+        [
+          0,
+          6,
+          4,
+          0,
+          0,
+          0,
+          0,
+          46
+        ]
+      ],
+      "macro_f1": 0.9201910367059442,
+      "per_class": [
+        {
+          "f1": 0.9587852494577007,
+          "label": "REST",
+          "precision": 0.9324894514767933,
+          "recall": 0.9866071428571429,
+          "support": 224
+        },
+        {
+          "f1": 0.8159999999999998,
+          "label": "WRIST_UP",
+          "precision": 0.7391304347826086,
+          "recall": 0.9107142857142857,
+          "support": 56
+        },
+        {
+          "f1": 0.7021276595744681,
+          "label": "WRIST_DOWN",
+          "precision": 0.868421052631579,
+          "recall": 0.5892857142857143,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "FOREARM_IN",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "FOREARM_OUT",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "ARM_UP",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "ARM_DOWN",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 0.8846153846153847,
+          "label": "FIST",
+          "precision": 0.9583333333333334,
+          "recall": 0.8214285714285714,
+          "support": 56
+        }
+      ],
+      "window_count": 616
+    },
+    "S003_D09_R01": {
+      "accuracy": 0.9626623376623377,
+      "balanced_accuracy": 0.95703125,
+      "confusion_matrix": [
+        [
+          219,
+          2,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          52,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          2,
+          4,
+          50,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          56,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          56,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          56,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          56,
+          0
+        ],
+        [
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          48
+        ]
+      ],
+      "macro_f1": 0.9553658547621294,
+      "per_class": [
+        {
+          "f1": 0.9842696629213483,
+          "label": "REST",
+          "precision": 0.9909502262443439,
+          "recall": 0.9776785714285714,
+          "support": 224
+        },
+        {
+          "f1": 0.8524590163934426,
+          "label": "WRIST_UP",
+          "precision": 0.7878787878787878,
+          "recall": 0.9285714285714286,
+          "support": 56
+        },
+        {
+          "f1": 0.9433962264150945,
+          "label": "WRIST_DOWN",
+          "precision": 1.0,
+          "recall": 0.8928571428571429,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "FOREARM_IN",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "FOREARM_OUT",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 0.9739130434782608,
+          "label": "ARM_UP",
+          "precision": 0.9491525423728814,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "ARM_DOWN",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 0.888888888888889,
+          "label": "FIST",
+          "precision": 0.9230769230769231,
+          "recall": 0.8571428571428571,
+          "support": 56
+        }
+      ],
+      "window_count": 616
+    },
+    "S003_D09_R02": {
+      "accuracy": 0.9253246753246753,
+      "balanced_accuracy": 0.9006696428571429,
+      "confusion_matrix": [
+        [
+          222,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          51,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          3,
+          15,
+          38,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          56,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          56,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          56,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          56,
+          0
+        ],
+        [
+          0,
+          18,
+          3,
+          0,
+          0,
+          0,
+          0,
+          35
+        ]
+      ],
+      "macro_f1": 0.9049895593686623,
+      "per_class": [
+        {
+          "f1": 0.9801324503311258,
+          "label": "REST",
+          "precision": 0.9694323144104804,
+          "recall": 0.9910714285714286,
+          "support": 224
+        },
+        {
+          "f1": 0.7234042553191489,
+          "label": "WRIST_UP",
+          "precision": 0.6,
+          "recall": 0.9107142857142857,
+          "support": 56
+        },
+        {
+          "f1": 0.7755102040816326,
+          "label": "WRIST_DOWN",
+          "precision": 0.9047619047619048,
+          "recall": 0.6785714285714286,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "FOREARM_IN",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "FOREARM_OUT",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "ARM_UP",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 1.0,
+          "label": "ARM_DOWN",
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 56
+        },
+        {
+          "f1": 0.7608695652173912,
+          "label": "FIST",
+          "precision": 0.9722222222222222,
+          "recall": 0.625,
+          "support": 56
+        }
+      ],
+      "window_count": 616
+    }
+  },
+  "target_trial_majority": {
+    "accuracy": 0.9821428571428571,
+    "correct_trials": 55,
+    "per_class": [
+      {
+        "correct_trials": 8,
+        "label": "WRIST_UP",
+        "recall": 1.0,
+        "trial_count": 8
+      },
+      {
+        "correct_trials": 8,
+        "label": "WRIST_DOWN",
+        "recall": 1.0,
+        "trial_count": 8
+      },
+      {
+        "correct_trials": 8,
+        "label": "FOREARM_IN",
+        "recall": 1.0,
+        "trial_count": 8
+      },
+      {
+        "correct_trials": 8,
+        "label": "FOREARM_OUT",
+        "recall": 1.0,
+        "trial_count": 8
+      },
+      {
+        "correct_trials": 8,
+        "label": "ARM_UP",
+        "recall": 1.0,
+        "trial_count": 8
+      },
+      {
+        "correct_trials": 8,
+        "label": "ARM_DOWN",
+        "recall": 1.0,
+        "trial_count": 8
+      },
+      {
+        "correct_trials": 7,
+        "label": "FIST",
+        "recall": 0.875,
+        "trial_count": 8
+      }
+    ],
+    "trial_count": 56,
+    "trials": [
+      {
+        "correct": true,
+        "predicted_index": 6,
+        "predicted_label": "ARM_DOWN",
+        "session_id": "S003_D08_R01",
+        "trial_id": 1,
+        "true_index": 6,
+        "true_label": "ARM_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 3,
+        "predicted_label": "FOREARM_IN",
+        "session_id": "S003_D08_R01",
+        "trial_id": 2,
+        "true_index": 3,
+        "true_label": "FOREARM_IN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 7,
+        "predicted_label": "FIST",
+        "session_id": "S003_D08_R01",
+        "trial_id": 3,
+        "true_index": 7,
+        "true_label": "FIST",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 5,
+        "predicted_label": "ARM_UP",
+        "session_id": "S003_D08_R01",
+        "trial_id": 4,
+        "true_index": 5,
+        "true_label": "ARM_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 1,
+        "predicted_label": "WRIST_UP",
+        "session_id": "S003_D08_R01",
+        "trial_id": 5,
+        "true_index": 1,
+        "true_label": "WRIST_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 4,
+        "predicted_label": "FOREARM_OUT",
+        "session_id": "S003_D08_R01",
+        "trial_id": 6,
+        "true_index": 4,
+        "true_label": "FOREARM_OUT",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 2,
+        "predicted_label": "WRIST_DOWN",
+        "session_id": "S003_D08_R01",
+        "trial_id": 7,
+        "true_index": 2,
+        "true_label": "WRIST_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 1,
+        "predicted_label": "WRIST_UP",
+        "session_id": "S003_D08_R01",
+        "trial_id": 8,
+        "true_index": 1,
+        "true_label": "WRIST_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 7,
+        "predicted_label": "FIST",
+        "session_id": "S003_D08_R01",
+        "trial_id": 9,
+        "true_index": 7,
+        "true_label": "FIST",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 4,
+        "predicted_label": "FOREARM_OUT",
+        "session_id": "S003_D08_R01",
+        "trial_id": 10,
+        "true_index": 4,
+        "true_label": "FOREARM_OUT",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 5,
+        "predicted_label": "ARM_UP",
+        "session_id": "S003_D08_R01",
+        "trial_id": 11,
+        "true_index": 5,
+        "true_label": "ARM_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 6,
+        "predicted_label": "ARM_DOWN",
+        "session_id": "S003_D08_R01",
+        "trial_id": 12,
+        "true_index": 6,
+        "true_label": "ARM_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 3,
+        "predicted_label": "FOREARM_IN",
+        "session_id": "S003_D08_R01",
+        "trial_id": 13,
+        "true_index": 3,
+        "true_label": "FOREARM_IN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 2,
+        "predicted_label": "WRIST_DOWN",
+        "session_id": "S003_D08_R01",
+        "trial_id": 14,
+        "true_index": 2,
+        "true_label": "WRIST_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 1,
+        "predicted_label": "WRIST_UP",
+        "session_id": "S003_D08_R02",
+        "trial_id": 1,
+        "true_index": 1,
+        "true_label": "WRIST_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 5,
+        "predicted_label": "ARM_UP",
+        "session_id": "S003_D08_R02",
+        "trial_id": 2,
+        "true_index": 5,
+        "true_label": "ARM_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 4,
+        "predicted_label": "FOREARM_OUT",
+        "session_id": "S003_D08_R02",
+        "trial_id": 3,
+        "true_index": 4,
+        "true_label": "FOREARM_OUT",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 6,
+        "predicted_label": "ARM_DOWN",
+        "session_id": "S003_D08_R02",
+        "trial_id": 4,
+        "true_index": 6,
+        "true_label": "ARM_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 2,
+        "predicted_label": "WRIST_DOWN",
+        "session_id": "S003_D08_R02",
+        "trial_id": 5,
+        "true_index": 2,
+        "true_label": "WRIST_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 7,
+        "predicted_label": "FIST",
+        "session_id": "S003_D08_R02",
+        "trial_id": 6,
+        "true_index": 7,
+        "true_label": "FIST",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 3,
+        "predicted_label": "FOREARM_IN",
+        "session_id": "S003_D08_R02",
+        "trial_id": 7,
+        "true_index": 3,
+        "true_label": "FOREARM_IN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 3,
+        "predicted_label": "FOREARM_IN",
+        "session_id": "S003_D08_R02",
+        "trial_id": 8,
+        "true_index": 3,
+        "true_label": "FOREARM_IN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 2,
+        "predicted_label": "WRIST_DOWN",
+        "session_id": "S003_D08_R02",
+        "trial_id": 9,
+        "true_index": 2,
+        "true_label": "WRIST_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 6,
+        "predicted_label": "ARM_DOWN",
+        "session_id": "S003_D08_R02",
+        "trial_id": 10,
+        "true_index": 6,
+        "true_label": "ARM_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 1,
+        "predicted_label": "WRIST_UP",
+        "session_id": "S003_D08_R02",
+        "trial_id": 11,
+        "true_index": 1,
+        "true_label": "WRIST_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 4,
+        "predicted_label": "FOREARM_OUT",
+        "session_id": "S003_D08_R02",
+        "trial_id": 12,
+        "true_index": 4,
+        "true_label": "FOREARM_OUT",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 7,
+        "predicted_label": "FIST",
+        "session_id": "S003_D08_R02",
+        "trial_id": 13,
+        "true_index": 7,
+        "true_label": "FIST",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 5,
+        "predicted_label": "ARM_UP",
+        "session_id": "S003_D08_R02",
+        "trial_id": 14,
+        "true_index": 5,
+        "true_label": "ARM_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 1,
+        "predicted_label": "WRIST_UP",
+        "session_id": "S003_D09_R01",
+        "trial_id": 2,
+        "true_index": 1,
+        "true_label": "WRIST_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 7,
+        "predicted_label": "FIST",
+        "session_id": "S003_D09_R01",
+        "trial_id": 3,
+        "true_index": 7,
+        "true_label": "FIST",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 3,
+        "predicted_label": "FOREARM_IN",
+        "session_id": "S003_D09_R01",
+        "trial_id": 4,
+        "true_index": 3,
+        "true_label": "FOREARM_IN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 4,
+        "predicted_label": "FOREARM_OUT",
+        "session_id": "S003_D09_R01",
+        "trial_id": 5,
+        "true_index": 4,
+        "true_label": "FOREARM_OUT",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 5,
+        "predicted_label": "ARM_UP",
+        "session_id": "S003_D09_R01",
+        "trial_id": 6,
+        "true_index": 5,
+        "true_label": "ARM_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 6,
+        "predicted_label": "ARM_DOWN",
+        "session_id": "S003_D09_R01",
+        "trial_id": 7,
+        "true_index": 6,
+        "true_label": "ARM_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 2,
+        "predicted_label": "WRIST_DOWN",
+        "session_id": "S003_D09_R01",
+        "trial_id": 8,
+        "true_index": 2,
+        "true_label": "WRIST_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 7,
+        "predicted_label": "FIST",
+        "session_id": "S003_D09_R01",
+        "trial_id": 9,
+        "true_index": 7,
+        "true_label": "FIST",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 6,
+        "predicted_label": "ARM_DOWN",
+        "session_id": "S003_D09_R01",
+        "trial_id": 10,
+        "true_index": 6,
+        "true_label": "ARM_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 5,
+        "predicted_label": "ARM_UP",
+        "session_id": "S003_D09_R01",
+        "trial_id": 11,
+        "true_index": 5,
+        "true_label": "ARM_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 1,
+        "predicted_label": "WRIST_UP",
+        "session_id": "S003_D09_R01",
+        "trial_id": 12,
+        "true_index": 1,
+        "true_label": "WRIST_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 4,
+        "predicted_label": "FOREARM_OUT",
+        "session_id": "S003_D09_R01",
+        "trial_id": 13,
+        "true_index": 4,
+        "true_label": "FOREARM_OUT",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 3,
+        "predicted_label": "FOREARM_IN",
+        "session_id": "S003_D09_R01",
+        "trial_id": 14,
+        "true_index": 3,
+        "true_label": "FOREARM_IN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 2,
+        "predicted_label": "WRIST_DOWN",
+        "session_id": "S003_D09_R01",
+        "trial_id": 15,
+        "true_index": 2,
+        "true_label": "WRIST_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 7,
+        "predicted_label": "FIST",
+        "session_id": "S003_D09_R02",
+        "trial_id": 1,
+        "true_index": 7,
+        "true_label": "FIST",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 1,
+        "predicted_label": "WRIST_UP",
+        "session_id": "S003_D09_R02",
+        "trial_id": 2,
+        "true_index": 1,
+        "true_label": "WRIST_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 2,
+        "predicted_label": "WRIST_DOWN",
+        "session_id": "S003_D09_R02",
+        "trial_id": 3,
+        "true_index": 2,
+        "true_label": "WRIST_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 6,
+        "predicted_label": "ARM_DOWN",
+        "session_id": "S003_D09_R02",
+        "trial_id": 4,
+        "true_index": 6,
+        "true_label": "ARM_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 4,
+        "predicted_label": "FOREARM_OUT",
+        "session_id": "S003_D09_R02",
+        "trial_id": 5,
+        "true_index": 4,
+        "true_label": "FOREARM_OUT",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 5,
+        "predicted_label": "ARM_UP",
+        "session_id": "S003_D09_R02",
+        "trial_id": 6,
+        "true_index": 5,
+        "true_label": "ARM_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 3,
+        "predicted_label": "FOREARM_IN",
+        "session_id": "S003_D09_R02",
+        "trial_id": 7,
+        "true_index": 3,
+        "true_label": "FOREARM_IN",
+        "window_count": 28
+      },
+      {
+        "correct": false,
+        "predicted_index": 1,
+        "predicted_label": "WRIST_UP",
+        "session_id": "S003_D09_R02",
+        "trial_id": 8,
+        "true_index": 7,
+        "true_label": "FIST",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 3,
+        "predicted_label": "FOREARM_IN",
+        "session_id": "S003_D09_R02",
+        "trial_id": 9,
+        "true_index": 3,
+        "true_label": "FOREARM_IN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 1,
+        "predicted_label": "WRIST_UP",
+        "session_id": "S003_D09_R02",
+        "trial_id": 10,
+        "true_index": 1,
+        "true_label": "WRIST_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 4,
+        "predicted_label": "FOREARM_OUT",
+        "session_id": "S003_D09_R02",
+        "trial_id": 11,
+        "true_index": 4,
+        "true_label": "FOREARM_OUT",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 5,
+        "predicted_label": "ARM_UP",
+        "session_id": "S003_D09_R02",
+        "trial_id": 12,
+        "true_index": 5,
+        "true_label": "ARM_UP",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 2,
+        "predicted_label": "WRIST_DOWN",
+        "session_id": "S003_D09_R02",
+        "trial_id": 13,
+        "true_index": 2,
+        "true_label": "WRIST_DOWN",
+        "window_count": 28
+      },
+      {
+        "correct": true,
+        "predicted_index": 6,
+        "predicted_label": "ARM_DOWN",
+        "session_id": "S003_D09_R02",
+        "trial_id": 14,
+        "true_index": 6,
+        "true_label": "ARM_DOWN",
+        "window_count": 28
+      }
+    ]
+  }
+}

@@ -42,10 +42,29 @@ On 2,464 held-out test windows, the selected personalised model achieved:
 | Balanced accuracy | 99.55% |
 | Macro-F1 | 99.64% |
 
+A controlled ablation study subsequently retrained five model variants using
+the same session split and three fixed random seeds (20260821--20260823):
+
+| Model variant | Test Macro-F1, mean +/- SD | Target-trial accuracy |
+|---|---:|---:|
+| sEMG only | 85.33 +/- 2.89% | 91.67% |
+| IMU only | 94.09 +/- 0.96% | 98.21% |
+| Fixed 50:50 fusion | 99.64 +/- 0.34% | 100.00% |
+| Trainable fusion, neutral initialisation | 99.65 +/- 0.32% | 100.00% |
+| Trainable fusion, physics-informed initialisation | 99.67 +/- 0.03% | 100.00% |
+
+The experiment verifies the benefit of combining the two modalities for this
+gesture set. It does not establish a meaningful accuracy advantage of learned
+class-dependent fusion over fixed 50:50 fusion on this dataset. The
+physics-informed initialisation is therefore treated as an optimisation prior,
+not as evidence that the model independently discovered sensor importance.
+
 These measurements demonstrate personalised recognition for one physical
 participant under the tested conditions. They do not establish equivalent
 performance for unseen users, alternative electrode placements or uncontrolled
-operating environments.
+operating environments. Successive 0.5 s evaluation windows advance by 0.1 s,
+so the aggregate window predictions overlap by 80% and are not independent
+trials; session-level and target-trial results are included alongside them.
 
 ## Repository structure
 
@@ -62,7 +81,7 @@ operating environments.
 ├── Data/
 │   ├── captures/                  # 21 accepted six-artifact sessions
 │   ├── datasets/                  # Paired 0.5 s window dataset and manifest
-│   ├── training_runs/             # Selected checkpoint and evaluation records
+│   ├── training_runs/             # Selected checkpoint and controlled ablations
 │   ├── realtime_configs/          # Validation-selected decision configuration
 │   ├── checksums.sha256
 │   └── README.md
@@ -150,7 +169,9 @@ recognition examples.
 model artifact and for the Data README. The dataset manifest records the source
 hashes and window-generation parameters. The model split file independently
 records the dataset and manifest hashes, while the real-time configuration
-records the selected checkpoint hash.
+records the selected checkpoint hash. The ablation directory retains the
+per-seed checkpoints, histories, predictions, grouped metrics and aggregate
+summaries used for the comparison above.
 
 The published capture set contains only the 21 sessions accepted by the
 automated quality gate. Informal demonstrations, failed attempts, quarantined

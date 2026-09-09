@@ -31,6 +31,13 @@ from .training_data import (
     inverse_sqrt_class_weights,
     normalize_arrays,
 )
+from .variants import (
+    TRAINING_VARIANTS,
+    build_model_for_variant,
+    prediction_logits,
+    primary_head_for_variant,
+    variant_training_loss,
+)
 from .windowing import WindowBatch
 
 
@@ -44,6 +51,7 @@ class TrainingConfig:
     patience: int = 12
     auxiliary_weight: float = 0.1
     device: str = "cuda"
+    variant: str = "learned_physics"
 
 
 @dataclass(frozen=True)
@@ -254,6 +262,8 @@ def _validate_config(config: TrainingConfig) -> torch.device:
         raise ValueError("learning rate must be positive and weight decay nonnegative")
     if not 0 <= config.auxiliary_weight <= 1:
         raise ValueError("auxiliary weight must be between zero and one")
+    if config.variant not in TRAINING_VARIANTS:
+        raise ValueError(f"unsupported training variant: {config.variant}")
     requested = torch.device(config.device)
     if requested.type == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("CUDA training was requested but CUDA is unavailable")
@@ -292,6 +302,7 @@ def _run_epoch(
     class_weights: torch.Tensor,
     auxiliary_weight: float,
     optimizer: torch.optim.Optimizer | None,
+    variant: str = "learned_physics",
 ) -> tuple[float, np.ndarray, np.ndarray]:
     training = optimizer is not None
     model.train(training)
@@ -316,7 +327,9 @@ def _run_epoch(
             ):
                 if not bool(torch.isfinite(value).all().item()):
                     raise FloatingPointError(f"model produced non-finite {name}")
-            loss = fused_training_loss(output, labels, class_weights, auxiliary_weight)
+            loss = variant_training_loss(
+                output, labels, class_weights, auxiliary_weight, variant,
+            )
             if not bool(torch.isfinite(loss).item()):
                 raise FloatingPointError("training produced a non-finite loss")
             if training:
@@ -332,7 +345,8 @@ def _run_epoch(
             loss_sum += float(loss.detach().item()) * batch_rows
             row_count += batch_rows
             true_parts.append(labels.detach().cpu().numpy())
-            predicted_parts.append(output.fused_logits.argmax(dim=1).detach().cpu().numpy())
+            primary_logits = prediction_logits(output, primary_head_for_variant(variant))
+            predicted_parts.append(primary_logits.argmax(dim=1).detach().cpu().numpy())
     return (
         loss_sum / row_count,
         np.concatenate(true_parts),
@@ -346,9 +360,11 @@ def _evaluate(
     device: torch.device,
     class_weights: torch.Tensor,
     auxiliary_weight: float,
+    variant: str = "learned_physics",
 ) -> dict:
     loss, truth, prediction = _run_epoch(
         model, loader, device, class_weights, auxiliary_weight, optimizer=None,
+        variant=variant,
     )
     result = classification_metrics(truth, prediction, CLASS_LABELS)
     result["loss"] = float(loss)
@@ -397,10 +413,13 @@ def train_model(
     dataset_hash = _sha256(dataset.path)
     manifest_hash = _sha256(dataset.path.with_suffix(".manifest.json"))
 
-    model = DualBranchCNN(class_count=len(CLASS_LABELS)).to(device)
+    model = build_model_for_variant(config.variant, class_count=len(CLASS_LABELS)).to(device)
     class_weights = torch.from_numpy(prepared.class_weights).to(device)
+    trainable_parameters = sum(
+        parameter.numel() for parameter in model.parameters() if parameter.requires_grad
+    )
     optimizer = torch.optim.AdamW(
-        model.parameters(),
+        (parameter for parameter in model.parameters() if parameter.requires_grad),
         lr=config.learning_rate,
         weight_decay=config.weight_decay,
     )
@@ -421,6 +440,7 @@ def train_model(
             class_weights,
             config.auxiliary_weight,
             optimizer,
+            config.variant,
         )
         validation = _evaluate(
             model,
@@ -428,6 +448,7 @@ def train_model(
             device,
             class_weights,
             config.auxiliary_weight,
+            config.variant,
         )
         history.append({
             "epoch": epoch,
@@ -454,12 +475,18 @@ def train_model(
     model.load_state_dict(best_state)
     validation = _evaluate(
         model, validation_loader, device, class_weights, config.auxiliary_weight,
+        config.variant,
     )
-    test = _evaluate(model, test_loader, device, class_weights, config.auxiliary_weight)
+    test = _evaluate(
+        model, test_loader, device, class_weights, config.auxiliary_weight,
+        config.variant,
+    )
     learned_weights = model.emg_weights().detach().cpu().tolist()
 
     metrics = {
         "schema_version": "personalized_dual_cnn_metrics_v1",
+        "variant": config.variant,
+        "trainable_parameters": int(trainable_parameters),
         "best_epoch": best_epoch,
         "best_validation_macro_f1": float(best_validation_f1),
         "validation": validation,
@@ -525,6 +552,7 @@ def main(argv=None):
     parser.add_argument("--patience", type=int, default=12)
     parser.add_argument("--auxiliary-weight", type=float, default=0.1)
     parser.add_argument("--device", default="cuda")
+    parser.add_argument("--variant", choices=TRAINING_VARIANTS, default="learned_physics")
     args = parser.parse_args(argv)
     config = TrainingConfig(
         seed=args.seed,
@@ -535,6 +563,7 @@ def main(argv=None):
         patience=args.patience,
         auxiliary_weight=args.auxiliary_weight,
         device=args.device,
+        variant=args.variant,
     )
     metrics = train_model(args.dataset, args.output_dir, config)
     print(f"Best epoch: {metrics['best_epoch']}")

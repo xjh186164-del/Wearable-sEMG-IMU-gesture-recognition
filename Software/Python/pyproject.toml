@@ -14,6 +14,7 @@ gesture-build-dataset = "gesture_ml.build_dataset:main"
 gesture-train = "gesture_ml.train:main"
 gesture-realtime-worker = "gesture_ml.realtime_worker:main"
 gesture-calibrate-realtime = "gesture_ml.calibrate_realtime:main"
+gesture-ablation = "gesture_ml.ablation:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

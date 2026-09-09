@@ -1,0 +1,49 @@
+{
+  "class_labels": [
+    "REST",
+    "WRIST_UP",
+    "WRIST_DOWN",
+    "FOREARM_IN",
+    "FOREARM_OUT",
+    "ARM_UP",
+    "ARM_DOWN",
+    "FIST"
+  ],
+  "dataset_manifest_sha256": "982f382b292c4f81ecc6852e5425f3687012c5300c0bbb26fa5d11443e65abc9",
+  "dataset_sha256": "be8b7b42ee289b4e5cbb510475b23eb112d85686ac39c051496ff9c544cc6f2b",
+  "schema_version": "personalized_session_split_v1",
+  "sessions": {
+    "test": [
+      "S003_D08_R01",
+      "S003_D08_R02",
+      "S003_D09_R01",
+      "S003_D09_R02"
+    ],
+    "train": [
+      "S001_D01_R02",
+      "S001_D02_R02",
+      "S002_D01_R01",
+      "S002_D02_R01",
+      "S003_D01_R01",
+      "S003_D01_R02",
+      "S003_D02_R01",
+      "S003_D02_R02",
+      "S003_D03_R01",
+      "S003_D03_R02",
+      "S003_D04_R01",
+      "S003_D04_R02",
+      "S003_D05_R01",
+      "S003_D05_R02"
+    ],
+    "validation": [
+      "S003_D06_R01",
+      "S003_D06_R02",
+      "S003_D07_R01"
+    ]
+  },
+  "window_counts": {
+    "test": 2464,
+    "train": 8624,
+    "validation": 1848
+  }
+}

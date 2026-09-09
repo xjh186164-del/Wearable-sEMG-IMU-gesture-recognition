@@ -50,19 +50,40 @@ class _ConvEncoder(nn.Module):
 
 
 class DualBranchCNN(nn.Module):
-    """Always evaluate both sensors and learn one bounded EMG weight per class."""
+    """Evaluate both sensors and combine them with bounded per-class weights."""
 
-    def __init__(self, class_count: int = 8, dropout: float = 0.25):
+    def __init__(
+        self,
+        class_count: int = 8,
+        dropout: float = 0.25,
+        *,
+        initial_emg_weights: torch.Tensor | None = None,
+        trainable_fusion: bool = True,
+    ):
         super().__init__()
         if type(class_count) is not int or class_count != 8:
             raise ValueError("this architecture is fixed to eight gesture classes")
+        if type(trainable_fusion) is not bool:
+            raise ValueError("trainable_fusion must be Boolean")
         self.class_count = class_count
         self.emg_encoder = _ConvEncoder(8, (32, 64, 128), (9, 7, 5), dropout)
         self.imu_encoder = _ConvEncoder(6, (24, 48, 96), (5, 5, 3), dropout)
         self.emg_head = nn.Linear(self.emg_encoder.output_features, class_count)
         self.imu_head = nn.Linear(self.imu_encoder.output_features, class_count)
-        priors = INITIAL_EMG_WEIGHTS.clamp(1e-6, 1.0 - 1e-6)
-        self.fusion_logits = nn.Parameter(torch.logit(priors))
+        if initial_emg_weights is None:
+            initial_emg_weights = INITIAL_EMG_WEIGHTS
+        priors = torch.as_tensor(initial_emg_weights, dtype=torch.float32).detach().clone()
+        if (
+            priors.shape != (class_count,)
+            or not bool(torch.isfinite(priors).all().item())
+            or not bool(torch.all((priors > 0.0) & (priors < 1.0)).item())
+        ):
+            raise ValueError("initial fusion weights must contain eight finite values in (0, 1)")
+        logits = torch.logit(priors)
+        if trainable_fusion:
+            self.fusion_logits = nn.Parameter(logits)
+        else:
+            self.register_buffer("fusion_logits", logits)
 
     def emg_weights(self) -> torch.Tensor:
         return torch.sigmoid(self.fusion_logits)

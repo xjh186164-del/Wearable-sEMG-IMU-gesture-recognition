@@ -21,6 +21,9 @@ Software/
 │   └── *.m
 ├── Python/
 │   ├── gesture_ml/
+│   │   ├── ablation.py
+│   │   ├── variants.py
+│   │   └── ...
 │   ├── pyproject.toml
 │   ├── requirements-data.txt
 │   ├── requirements-cuda.txt
@@ -119,6 +122,8 @@ The Python package supports:
 - construction of timestamp-aligned sEMG--IMU datasets;
 - session-level training, validation and test partitioning;
 - training and evaluation of the dual-branch convolutional neural network;
+- post-hoc branch evaluation and controlled retraining of five ablation
+  variants;
 - calibration and replay of the real-time decision filter;
 - persistent TCP inference for the MATLAB client.
 
@@ -154,6 +159,30 @@ An example training command is:
   --output-dir .\Data\training_runs\p001_dual_cnn `
   --seed 20260821
 ```
+
+To reproduce the additional modality and fusion comparison, run:
+
+```powershell
+.\.venv-gesture\Scripts\gesture-ablation.exe `
+  --dataset .\Data\datasets\p001_windows.npz `
+  --baseline-checkpoint .\Data\training_runs\p001_dual_cnn\best_model.pt `
+  --output-dir .\Data\training_runs\p001_ablation_reproduction `
+  --device cuda `
+  --seeds 20260821,20260822,20260823
+```
+
+The command first evaluates the existing selected checkpoint with its sEMG
+head, IMU head, fixed 50:50 fusion and learned fusion. It then independently
+trains `emg_only`, `imu_only`, `fixed_50_50`, `learned_neutral` and
+`learned_physics` variants for each seed. Each run stores its selected
+checkpoint, epoch history, exact split, window-level predictions and grouped
+session/trial metrics. Aggregate outputs are written to
+`aggregate_summary.csv`, `run_summary.csv` and `ablation_results.json`.
+
+The published run is retained under
+`Data/training_runs/p001_ablation_20260908`. Reproduction results should be
+written to a different directory, as in the example, to avoid overwriting the
+reported artifacts.
 
 ## 4. Live recognition
 

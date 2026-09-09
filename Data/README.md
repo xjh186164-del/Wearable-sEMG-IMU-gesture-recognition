@@ -1,8 +1,9 @@
-# Data and trained model
+# Data, trained models and evaluation results
 
 This directory contains the accepted recordings, derived window dataset,
-selected model checkpoint and real-time decision configuration used to produce
-the results reported for the wearable sEMG--IMU gesture-recognition system.
+selected model checkpoint, controlled ablation study and real-time decision
+configuration used to produce the results reported for the wearable sEMG--IMU
+gesture-recognition system.
 
 ## Important participant note
 
@@ -28,11 +29,12 @@ Data/
 │   ├── p001_windows.npz
 │   └── p001_windows.manifest.json
 ├── training_runs/
-│   └── p001_dual_cnn/
-│       ├── best_model.pt
-│       ├── history.csv
-│       ├── metrics.json
-│       └── split.json
+│   ├── p001_dual_cnn/
+│   │   ├── best_model.pt
+│   │   ├── history.csv
+│   │   ├── metrics.json
+│   │   └── split.json
+│   └── p001_ablation_20260908/  # Five variants, three seeds and post-hoc results
 ├── realtime_configs/
 │   ├── p001_dual_cnn_endpoint_v2.json
 │   └── p001_dual_cnn_endpoint_v2.test_evaluation.json
@@ -58,6 +60,11 @@ Each accepted session has exactly six files sharing the same session basename:
 | `_events.csv` | Gesture-protocol events and authoritative temporal labels |
 | `_metadata.json` | Acquisition settings, session identity and protocol information |
 | `_quality.json` | Sampling, continuity, clipping, IMU plausibility and event-coverage checks |
+
+In session identifiers such as `S003_D08_R02`, `Dxx` denotes the acquisition
+date index and `Rxx` denotes a complete removal and refitting performed on that
+date. The accepted data therefore include multiple dates and repeated donning
+cycles for the same physical participant.
 
 The principal CSV schemas are:
 
@@ -125,6 +132,43 @@ The selected checkpoint was obtained at epoch 8. On the four held-out test
 sessions it achieved 99.68% accuracy, 99.55% balanced accuracy and 99.64%
 Macro-F1.
 
+## Controlled modality and fusion ablation
+
+`training_runs/p001_ablation_20260908` contains a post-hoc diagnostic of the
+selected checkpoint and an independently trained comparison using three fixed
+random seeds. All variants use the same dataset and session-level split.
+
+| Retrained variant | Parameters | Accuracy, mean +/- SD | Macro-F1, mean +/- SD | Target trials |
+|---|---:|---:|---:|---:|
+| sEMG only | 59,080 | 84.97 +/- 2.53% | 85.33 +/- 2.89% | 154/168 |
+| IMU only | 21,416 | 95.08 +/- 0.81% | 94.09 +/- 0.96% | 165/168 |
+| Fixed 50:50 fusion | 80,496 | 99.68 +/- 0.25% | 99.64 +/- 0.34% | 168/168 |
+| Learned fusion, neutral start | 80,504 | 99.69 +/- 0.23% | 99.65 +/- 0.32% | 168/168 |
+| Learned fusion, physics-informed start | 80,504 | 99.70 +/- 0.02% | 99.67 +/- 0.03% | 168/168 |
+
+The three-seed results support multimodal fusion over either isolated sensor
+branch. The differences among the three fused configurations are small and do
+not demonstrate that trainable class-dependent fusion is superior to fixed
+50:50 fusion on this dataset. Neutral initialisation also produced high fused
+performance without converging to the physics-informed weight pattern.
+
+The four heads of the original selected checkpoint were also evaluated without
+retraining. Their test Macro-F1 scores were 83.86% for the sEMG head, 91.50%
+for the IMU head, 99.43% for fixed 50:50 fusion and 99.64% for its learned
+fusion. These are diagnostic outputs of one jointly trained checkpoint and
+must not be treated as a controlled comparison; the independently retrained
+results above provide that comparison.
+
+The result directory contains all 15 selected checkpoints together with their
+histories, exact splits, window predictions, per-session and target-trial
+metrics. `aggregate_summary.csv` is the concise cross-seed result table,
+`run_summary.csv` contains one row per training run, and
+`ablation_results.json` retains the complete machine-readable evaluation.
+
+Successive test windows overlap by 80%, so the 2,464 window predictions are not
+independent observations. The grouped files report results for each held-out
+session and for the 56 target trials in every run.
+
 ## Real-time configuration
 
 `realtime_configs/p001_dual_cnn_endpoint_v2.json` stores the
@@ -151,9 +195,9 @@ data.
 ## Integrity and storage
 
 `checksums.sha256` records the SHA-256 digest of every distributed file except
-the checksum file itself. Because the CSV and NPZ artifacts are large binary or
-data files, they should be tracked with Git Large File Storage rather than
-ordinary Git history.
+the checksum file itself. Because the capture CSVs, NPZ dataset and PyTorch
+checkpoints are large data or binary files, they are tracked with Git Large
+File Storage rather than ordinary Git history.
 
 No data-reuse licence is granted by this README. Add an explicit repository
 data licence only after ownership, participant consent and institutional
